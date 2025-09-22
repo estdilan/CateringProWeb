@@ -6,7 +6,6 @@
 
 body {
     background-color: #404040;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -17,7 +16,6 @@ header {
     position: absolute;
     min-height: 140px;
     width: 100%;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -26,7 +24,6 @@ header {
 nav {
     padding: 10px;
     gap: 10px;
-
     display: flex;
     align-items: center;
 }
@@ -39,7 +36,6 @@ nav {
     transition: border-color 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 2px;
-
     font-family: "Merriweather Sans", sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -55,7 +51,6 @@ nav {
     padding: 5%;
     border: 1.8px solid transparent;
     transition: border-color 0.3s ease;
-    
     display: flex;
 }
 
@@ -172,6 +167,61 @@ nav {
     color: #FFFAEB;
 }
 
+footer {
+    background-color: #151515;
+    padding: 50px 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 200px;
+}
+
+.footer-col {
+    color: white;
+    display: flex;
+    gap: 100px;
+}
+
+.footer-col h4 {
+    letter-spacing: 2px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: auto;
+}
+
+.footer-col p {
+    letter-spacing: 0px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: auto;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+    gap: 15px;
+}
+
+li {
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+
+
+
 @media (max-width: 920px) {
     .services {
         flex-direction: column;
@@ -180,6 +230,12 @@ nav {
     .services img {
         width: 80%;
         height: auto;
+    }
+
+    footer {
+        padding: 80px;
+        flex-direction: column;
+        gap: 100px;
     }
 }
 
