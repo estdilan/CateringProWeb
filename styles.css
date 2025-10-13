@@ -167,11 +167,11 @@ nav a, header a{
 }
 
 #text-content {
-    max-width: 700px;
     padding: 10rem 6rem 0 0;
 }
 
 #text-content p {
+    max-width: 700px;
     font-size: 1.5rem;
     font-style: normal;
 }
@@ -207,6 +207,7 @@ nav a, header a{
 }
 
 .btn-call-action {
+    width: fit-content;
     padding: 10px 30px;
     text-align: center;
     color: #151515;
