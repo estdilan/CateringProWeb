@@ -16,23 +16,26 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="logo">
-                <img src="img/logo-white.png" alt="Logo">
+        <h1>
+            <a href="index.html"><img src="img/logo-white.png" alt="Logo"></a>
+            <a href="index.html">Catering Pro</a>
+        </h1>    
+        <nav>
+            <ul>
+                <li><a href="#">MATRIMONIOS</a></li>
+                <li><a href="#">EVENTOS CORPORATIVOS</a></li>
+                <li><a href="#">FIESTAS PRIVADAS</a></li>
+                <li><a href="#">GALERIA</a></li>
+                <li><a href="#">RESEÑAS</a></li>
+            </ul>
+            <div id="menu-toggle" aria-expanded="false" aria-controls="sidebar">
+                <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
             </div>
-            <nav class="nav-header">
-                <ul>
-                    <li><a href="#">MATRIMONIOS</a></li>
-                    <li><a href="#">EVENTOS CORPORATIVOS</a></li>
-                    <li><a href="#">FIESTAS PRIVADAS</a></li>
-                    <li><a href="#">GALERIA</a></li>
-                    <li><a href="#">RESEÑAS</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
-
-    <!--<div class="sidebar">
+    <div id="sidebar">
         <nav>
             <ul>
                 <li><a href="#">MATRIMONIOS</a></li>
@@ -42,59 +45,59 @@
                 <li><a href="#">RESEÑAS</a></li>
             </ul>
         </nav>
-    </div>-->
+    </div>
 
-    <section class="hero-section" style="background-image: url(img/others/private-party-buffet.png);">
-        <div class="hero-content">
-            <h1>Catering Pro</h1>
-        </div>
+    <section class="hero-background" style="background-image: url(img/others/private-party-buffet.png);">
     </section>
-    <section class="about-section">
-        <div id="headline-content">
+    <section class="highlight">
+        <div>
             <h2>LO QUE HACEMOS</h2>
         </div>
-        <div id="introduction-content">
+        <div>
             <p>Imagina una experiencia gastronómica hecha a tu medida, donde cada sabor, textura y aroma celebra tu historia. En Catering Pro, transformamos tu boda, celebración o evento en un festín inolvidable.<br>
             <br>Lo hacemos con el compromiso en cada detalle, desde la impecable presentación de cada plato hasta el servicio que te hará sentir como el anfitrión perfecto.</p>
-        </div>
-        <div id="text-content">
-            <p>Ofrecemos servicios de catering integral para eventos que se realicen en la ciudad de Bogotá y áreas circundantes.<br><br>Para la planificación de su evento, le invitamos a consultar directamente la disponibilidad de nuestras fechas de servicio a través de nuestro calendario.</p>
-            <a href="#contacto" class="btn-call-action">IR AL CALENDARIO</a>
         </div>
         <div id="preparation-image" style="background-image: url(img/others/preparation-show.jpg);">
         </div>
     </section>
-    <section class="call-to-action-section">
-        <p>Permítanos orquestar esta sinfonía culinaria para que su única tarea sea vivir y atesorar los mejores momentos.</p>
-        <a href="#contacto" class="btn-call-action">COTIZAR EVENTO</a>
+    <section class="contact-bar">
+        <p>Realizamos nuestras operaciones en la ciudad de Bogotá, incluyendo sus áreas circundantes.<br>
+        <br>Estaremos entusiasmados de orquestar esta sinfonía culinaria para que su única tarea sea vivir y atesorar los mejores momentos.</p>
+        <a href="#contacto" class="contact-btn">PONERSE EN CONTACTO</a>
     </section>
-    <section class="hero-section" style="background-image: url(img/others/amasijos.png);">
+    <section class="form" style="background-image: url(img/others/amasijos.png);">
         <div class="hero-content">
         </div>
     </section>
+
     <footer>
         <div class="footer-content">
-            <img src="img/imagotipo.png" alt="Imagotipo" class="logo">
-            <div class="nav-footer">
-                <ul>
-                    <span>Servicios</span>
-                    <li><a href="#">MATRIMONIOS</a></li>
-                    <li><a href="#">EVENTOS CORPORATIVOS</a></li>
-                    <li><a href="#">FIESTAS PRIVADAS</a></li>
-                </ul>
-                <ul>
-                    <span>Nosotros</span>
-                    <li><a href="#">NUESTRO TRABAJO</a></li>
-                    <li><a href="#">RESEÑAS DE CLIENTES</a></li>
-                    <li><a href="#">GALERÍA DE IMAGENES</a></li>
-                </ul>
+            <div class="slogan">
+                <p>Cocinamos Sabores Perfectos</p>
             </div>
-            <div class="eslogan-section">
-                <p class="eslogan"><em>Cocinamos Sabores Perfectos</em></p>
-            </div>
+            <nav aria-label="Enlaces de navegación del pie de página">
+                <div class="footer-col">
+                    <h3>Servicios</h3> 
+                    <ul>
+                        <li><a href="#">MATRIMONIOS</a></li>
+                        <li><a href="#">EVENTOS CORPORATIVOS</a></li>
+                        <li><a href="#">FIESTAS PRIVADAS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Nosotros</h3>
+                    <ul>
+                        <li><a href="#">CATERINGPRO</a></li>
+                        <li><a href="#">RESEÑAS</a></li>
+                        <li><a href="#">GALERÍA</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <p class="copyright">&copy;2025 Catering Pro todos los derechos reservados.</p>
-</footer>
-<script src="script.js"></script>
+        <div class="footer-bottom">
+            <p class="copyright">&copy;2025 Catering Pro todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
