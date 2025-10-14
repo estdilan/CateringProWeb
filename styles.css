@@ -333,9 +333,12 @@ footer {
     .highlight h2 {
         font-size: 4rem;
     }
+    #preparation-image {
+        height: 500px;
+    }
 
     footer {
-        height: 600px;
+        height: 500px;
     }
     .footer-content {
         flex-direction: column;
@@ -351,7 +354,6 @@ footer {
         grid-template-rows: auto auto auto;
         grid-row-gap: 2rem;
     }
-
     #preparation-image {
         grid-area: 3 / 1 / 4 / 2;
         margin-top: 8rem;
