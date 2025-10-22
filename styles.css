@@ -399,3 +399,40 @@ footer {
         gap: 4rem;
     }
 }
+
+/* PÁGINAS DE SERVICIOS  */
+.service-detail {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-detail h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5em;
+    color: #8c5b3f;
+    margin-bottom: 20px;
+}
+
+.service-detail p {
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.service-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-gallery img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
