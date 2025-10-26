@@ -1,0 +1,403 @@
+/* --------------------------
+   ESTILOS GENERALES
+---------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Tipografía y colores base */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* --------------------------
+   BOTONES
+---------------------------*/
+.btn {
+  background-color: #c7b198; /* Beige principal */
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #9c8b77;
+  transform: scale(1.03);
+}
+
+/* --------------------------
+   HERO BANNER
+---------------------------*/
+.hero {
+  background: url('img/others/couple-2.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.hero h3 {
+  font-size: 1.4rem;
+  margin: 10px 0 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow:0 2px 6px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  color: #fff;
+ text-shadow:0 2px 6px rgba(0,0,0,0.4);
+}
+.hero-btn {
+  background-color: #c7b198;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #9c8b77;
+  transform: scale(1.03);
+}
+
+/* --------------------------
+   SECCIONES ALTERNADAS
+---------------------------*/
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+.banner-left {
+  background-color: #faf6f1;
+}
+
+.banner-right {
+  background-color: #fff;
+}
+
+.banner-text {
+  flex: 1;
+  padding: 80px;
+}
+
+.banner-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2b2b2b;
+}
+
+.banner-text p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+.banner-img {
+  flex: 1;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* --------------------------
+   FORMULARIO DE CONTACTO
+---------------------------*/
+.contacto {
+  background-color: #faf6f1;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contacto h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacto input,
+.contacto textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  resize: none;
+}
+
+.contacto button {
+  align-self: center;
+}
+
+/* --------------------------
+   FOOTER
+---------------------------*/
+footer {
+  background-color: #2b2b2b;
+  color: #fff;
+  padding: 60px 20px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.footer-col h4 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #c7b198;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  color: #c7b198;
+}
+
+.footer-col.social a img {
+  width: 26px;
+  margin: 0 6px;
+  transition: transform 0.3s ease;
+}
+
+.footer-col.social a img:hover {
+  transform: scale(1.2);
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* --------------------------
+   IMÁGENES DE SECCIONES
+---------------------------*/
+.banquete-img {
+  background: url('img/others/finger-foods-3.jpg') center/cover no-repeat;
+}
+
+.fotografia-img {
+  background: url('img/others/glass-view.jpg') center/cover no-repeat;
+}
+
+.decoracion-img {
+  background: url('img/others/preparation-show.jpg') center/cover no-repeat;
+}
+
+.recepcion-img {
+  background: url('img/others/ser.jpg') center/cover no-repeat;
+}
+
+
+/* --------------------------
+   RESPONSIVE DESIGN
+---------------------------*/
+@media (max-width: 992px) {
+  .banner {
+    flex-direction: column;
+  }
+  .banner-img {
+    width: 100%;
+    height: 300px;
+  }
+  .banner-text {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .banner-text p {
+    margin: 0 auto 20px;
+  }
+}
+/* --------------------------
+   HEADER DE NAVEGACIÓN
+---------------------------*/
+.main-header {
+  width: 100%;
+  background-color: #262626;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between; /* 👉 esto alinea a los extremos */
+  align-items: center;
+}
+
+/* LOGO Y NOMBRE */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.brand-name {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+}
+
+/* MENÚ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #c7b198; /* beige claro */
+  transform: translateY(-2px);
+}
+
+/* Enlace activo */
+.nav-links a.active {
+  color: #c7b198;
+}
+
+/* Ajuste para que el hero no quede tapado */
+body {
+  padding-top: 86px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 24px;
+  }
+  .brand-logo {
+    height: 42px;
+  }
+  .brand-name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 20px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
