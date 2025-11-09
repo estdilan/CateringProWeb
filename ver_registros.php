@@ -53,7 +53,7 @@ $result = $conn->query($sql);
   </style>
 </head>
 <body>
-  <h1>📋 Registros del Formulario de Cotización</h1>
+  <h1> Registros del Formulario de Cotización</h1>
 
   <table>
     <tr>

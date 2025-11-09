@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos Corporativos | Catering Pro</title>
+  <link rel="stylesheet" href="Matrimonios.css" />
+  <link rel="stylesheet" href="Eventos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="img/logo-white.png" alt="Catering Pro" class="brand-logo">
+        <span class="brand-name">Catering Pro</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="Matrimonios.html">MATRIMONIOS</a>
+        <a href="eventos.html" class="active">EVENTOS CORPORATIVOS</a>
+        <a href="fiestas.html">FIESTAS PRIVADAS</a>
+        <a href="galeria.html">GALERÍA</a>
+        <a href="reseñas.html">RESEÑAS</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" data-aos="fade-up">
+    <h1>Eventos Corporativos</h1>
+    <p>Servicios de catering y organización diseñados para empresas que buscan excelencia, puntualidad y sabor en cada evento.</p>
+    <a href="#contacto" class="btn">Cotiza en línea</a>
+  </section>
+
+  <!-- CARRUSEL -->
+  <div class="swiper mySwiper" data-aos="fade-up">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img/others/estacióndecafé.jpg" alt="Estaciones de café"></div>
+      <div class="swiper-slide"><img src="img/others/refrigerios.jpg" alt="Refrigerios empresariales"></div>
+      <div class="swiper-slide"><img src="img/others/desayunos.jpg" alt="Desayunos de trabajo"></div>
+      <div class="swiper-slide"><img src="img/others/postres.jpg" alt="Postres gourmet"></div>
+      <div class="swiper-slide"><img src="img/others/fiesta.jpg" alt="Fiestas de empresa"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- SECCIONES -->
+  <section class="banner" data-aos="fade-right">
+    <div class="banner-img" style="background-image: url('img/others/cafe.jpg');"></div>
+    <div class="banner-text">
+      <h2>Estaciones de Café</h2>
+      <p>Catering empresarial especializado para todo tipo de eventos corporativos. Estaciones de café personalizadas, refrigerios saludables y comida para eventos masivos o pasabocas gourmet. Cubrimos Bogotá y Cundinamarca, asegurando que cada pausa o evento sea un éxito.</p>
+    </div>
+  </section>
+
+  <section class="banner" data-aos="fade-left">
+    <div class="banner-text">
+      <h2>Refrigerios y Almuerzos Empacados</h2>
+      <p>La opción práctica y deliciosa para tus reuniones o días de oficina. Almuerzos y refrigerios empacados, frescos y balanceados, perfectos para consentir a tus clientes o equipo de trabajo.</p>
+    </div>
+    <div class="banner-img" style="background-image: url('img/others/refri.jpg');"></div>
+  </section>
+
+  <section class="banner" data-aos="fade-right">
+    <div class="banner-img" style="background-image: url('img/others/desayunosem.jpg');"></div>
+    <div class="banner-text">
+      <h2>Desayunos y Almuerzos de Trabajo</h2>
+      <p>Opciones saludables y gourmet diseñadas para destacar en cualquier evento, garantizando experiencias revitalizantes y deliciosas.</p>
+    </div>
+  </section>
+
+  <section class="banner" data-aos="fade-left">
+    <div class="banner-text">
+      <h2>Postres para Eventos</h2>
+      <p>Mini pasteles, galletas artesanales y postres individuales ideales para reuniones o celebraciones empresariales. Cada detalle cuenta.</p>
+    </div>
+    <div class="banner-img" style="background-image: url('img/others/postrescatering.jpg');"></div>
+  </section>
+
+  <section class="banner" data-aos="fade-right">
+    <div class="banner-img" style="background-image: url('img/others/martinis.jpg');"></div>
+    <div class="banner-text">
+      <h2>Organización de Fiestas Empresariales</h2>
+      <p>Desde la elección del lugar, decoración y menú gourmet, hasta entretenimiento y logística. Más de 20 años creando experiencias inolvidables en Bogotá y Cundinamarca.</p>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="contacto" data-aos="fade-up">
+    <h2>¿Por qué elegirnos?</h2>
+    <p><strong>Adaptabilidad:</strong> Nos ajustamos a cualquier preferencia, desde menús veganos hasta cocina tradicional.<br>
+       <strong>Calidad premium:</strong> Ingredientes frescos y seleccionados.<br>
+       <strong>Comodidad:</strong> Nos encargamos de todo el proceso.<br>
+       <strong>Experiencia:</strong> Más de 20 años de trayectoria en catering corporativo.</p>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="contacto" class="contacto" data-aos="fade-up">
+    <h2>Solicita tu cotización</h2>
+
+    <form id="formulario-cotiza">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" name="nombre" type="text" required>
+      <label for="correo">Correo electrónico</label>
+      <input id="correo" name="correo" type="email" required>
+      <label for="mensaje">Cuéntanos sobre tu evento</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <div id="form-msg" style="display:none; margin-top:16px; font-weight:600;"></div>
+  </section>
+
+  <!-- FOOTER -->
+   <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="img/imagotipo.png" alt="Catering Pro" class="footer-logo">
+        <p>Creando sabores perfectos.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li>Matrimonios</li>
+          <li>Corporativos</li>
+          <li>Otras reuniones</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nosotros</h4>
+        <ul>
+          <li>Contacto</li>
+          <li>Testimonios</li>
+          <li>Galería</li>
+        </ul>
+      </div>
+      <div class="footer-col social">
+        <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="img/youtube.svg" alt="YouTube"></a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Catering Pro | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- LIBRERÍAS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      autoplay: { delay: 4000 },
+    });
+
+    // Enviar formulario
+    document.getElementById('formulario-cotiza').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const msg = document.getElementById('form-msg');
+      const formData = new FormData(e.target);
+      try {
+        const resp = await fetch('api/post/guardarDatos.php', { method: 'POST', body: formData });
+        const data = await resp.json();
+        msg.style.display = 'block';
+        msg.style.color = data.ok ? 'green' : 'red';
+        msg.innerText = data.msg;
+        if (data.ok) e.target.reset();
+      } catch (err) {
+        msg.style.display = 'block';
+        msg.style.color = 'red';
+        msg.innerText = 'Error de red: ' + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
