@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseñas | Catering</title>
+  <link rel="stylesheet" href="Reseñas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="img/logo.png" alt="Logo" class="brand-logo">
+        <span class="brand-name">Catering</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="Eventos.html">Eventos</a>
+        <a href="Fiestas_Privadas.html">Fiestas Privadas</a>
+        <a href="Galerias.html">Galerías</a>
+        <a href="Reseñas.html" class="active">Reseñas</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Tu opinión importa</h1>
+      <p>Cuéntanos cómo fue tu experiencia con nosotros</p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="resenas">
+    <h2>Deja tu reseña</h2>
+    <form id="form-resenas">
+      <div>
+        <label for="nombre">Nombre</label><br>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div>
+        <label for="correo">Correo (opcional)</label><br>
+        <input type="email" id="correo" name="correo">
+      </div>
+      <div>
+        <label for="comentario">Comentario</label><br>
+        <textarea id="comentario" name="comentario" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <div id="msg-box" class="msg"></div>
+  </section>
+
+  <!-- LISTA DE RESEÑAS -->
+  <section class="lista-resenas">
+    <h2>Lo que opinan nuestros clientes</h2>
+    <div id="resenas-container">
+      <p class="no-resenas">Cargando reseñas...</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Catering. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form-resenas");
+    const msg = document.getElementById("msg-box");
+    const container = document.getElementById("resenas-container");
+
+    // Cargar reseñas existentes
+    async function cargarResenas() {
+      try {
+        const resp = await fetch("verResenas.php");
+        const data = await resp.json();
+        container.innerHTML = "";
+        if (data.length === 0) {
+          container.innerHTML = "<p class='no-resenas'>Aún no hay reseñas, sé el primero en comentar.</p>";
+        } else {
+          data.forEach(r => {
+            const div = document.createElement("div");
+            div.classList.add("resenas");
+            div.innerHTML = `
+              <h3>${r.nombre}</h3>
+              <p class="fecha">${r.fecha}</p>
+              <p class="comentario">${r.comentario}</p>
+            `;
+            container.appendChild(div);
+          });
+        }
+      } catch (e) {
+        container.innerHTML = "<p class='no-resenas'>Error al cargar reseñas.</p>";
+      }
+    }
+
+    // Enviar nueva reseña
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.textContent = "";
+      const formData = new FormData(form);
+      try {
+        const resp = await fetch("api/post/guardar_resena.php", {
+          method: "POST",
+          body: formData
+        });
+        const json = await resp.json();
+        if (json.ok) {
+          msg.textContent = "¡Gracias por tu reseña!";
+          msg.style.color = "green";
+          form.reset();
+          cargarResenas();
+        } else {
+          msg.textContent = json.msg || "Error al enviar.";
+          msg.style.color = "red";
+        }
+      } catch {
+        msg.textContent = "Error de red.";
+        msg.style.color = "red";
+      }
+    });
+
+    cargarResenas();
+  });
+  </script>
+</body>
+</html>

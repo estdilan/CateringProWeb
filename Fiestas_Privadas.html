@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiestas Privadas | Catering</title>
+
+  <!-- Enlaces CSS -->
+  <link rel="stylesheet" href="Matrimonios.css">
+  <link rel="stylesheet" href="Fiestas_Privadas.css">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-inner">  
+      <div class="brand">
+        <img src="img/logo-white.png" alt="Catering Pro" class="brand-logo">
+        <span class="brand-name">Catering Pro</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="Matrimonios.html">MATRIMONIOS</a>
+        <a href="Eventos.html">EVENTOS CORPORATIVOS</a>
+        <a href="Fiestas_Privadas.html" class="active">FIESTAS PRIVADAS</a>
+        <a href="Galerias.html">GALERÍA</a>
+        <a href="Reseñas.html">RESEÑAS</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Fiestas Privadas</h1>
+    <p>Hacemos realidad tus celebraciones con estilo, elegancia y el mejor servicio gastronómico en Bogotá y Cundinamarca.</p>
+    <a href="#contacto" class="btn">Cotiza en línea</a>
+  </section>
+
+  <!-- QUINCE AÑOS -->
+  <section class="banner banner-light">
+    <div class="banner-img" style="background-image: url('img/quince.jpg');"></div>
+    <div class="banner-text">
+      <h2>Fiestas de Quince Años</h2>
+      <p>Creamos celebraciones únicas con catering a la medida, decoración soñada, ponqué temático y atención impecable. Menús diseñados para jóvenes y adultos con estaciones interactivas, postres creativos y cenas temáticas.</p>
+      <p><strong>¡Llama ya y separa tu fecha!</strong> Ofrecemos opciones vegetarianas, sin gluten y sin azúcar.</p>
+      <a href="#contacto" class="btn">Cotiza tu Fiesta</a>
+    </div>
+  </section>
+
+  <!-- DECORACIONES TEMÁTICAS -->
+  <section class="banner banner-dark">
+    <div class="banner-text">
+      <h2>Decoraciones Temáticas</h2>
+      <p>Diseñamos decoraciones personalizadas con elegancia y estilo, cuidando cada detalle: flores, iluminación, mobiliario y colores en perfecta armonía. Contamos con salones y haciendas ideales para tus celebraciones.</p>
+      <ul>
+        <li>Estaciones interactivas (hamburguesas, crepes, sushi, tacos, etc.)</li>
+        <li>Buffets, cenas servidas y snacks divertidos</li>
+        <li>Postres y ponqués temáticos</li>
+      </ul>
+      <a href="#contacto" class="btn">Cotiza tu Fiesta de Quince</a>
+    </div>
+    <div class="banner-img" style="background-image: url('img/decoracionquince.jpg');"></div>
+  </section>
+
+  <!-- DJ -->
+  <section class="banner banner-light">
+    <div class="banner-img" style="background-image: url('img/djquince.jpg');"></div>
+    <div class="banner-text">
+      <h2>DJ para Fiestas de Quince</h2>
+      <p>Nuestros DJ profesionales y sistemas de sonido premium crearán el ambiente soñado para tu fiesta. Iluminación tipo show, efectos especiales y música personalizada para que cada instante sea inolvidable.</p>
+      <a href="#contacto" class="btn">Agenda tu Fiesta Aquí</a>
+    </div>
+  </section>
+
+  <!-- INFANTILES -->
+  <section class="banner banner-dark">
+    <div class="banner-text">
+      <h2>Fiestas Infantiles</h2>
+      <p>Celebramos los cumpleaños de tus hijos con un catering único, pensado especialmente para los más pequeños. Menús divertidos, servicio impecable y decoración temática para una fiesta sin preocupaciones.</p>
+      <ul>
+        <li>Mini sándwiches divertidos</li>
+        <li>Bandejas de frutas y verduras coloridas</li>
+        <li>Opciones sin gluten o veganas</li>
+        <li>Cupcakes temáticos con y sin azúcar</li>
+      </ul>
+      <a href="#contacto" class="btn">Conoce Nuestros Paquetes</a>
+    </div>
+    <div class="banner-img" style="background-image: url('img/fiestainfantil.jpg');"></div>
+  </section>
+
+  <!-- DECORACIONES Y ALQUILERES -->
+  <section class="banner banner-light">
+    <div class="banner-img" style="background-image: url('img/decoracioninfantil.jpg');"></div>
+    <div class="banner-text">
+      <h2>Decoraciones y Alquileres</h2>
+      <p>Ofrecemos alquiler de mesas, sillas, mantelería y decoración temática. Diseñamos y montamos cada espacio para crear ambientes únicos que reflejan la temática y estilo de tu celebración.</p>
+      <a href="#contacto" class="btn">Click aquí para Conocer los Paquetes</a>
+    </div>
+  </section>
+
+   <!--  FORMULARIO AJAX -->
+  <section id="contacto" class="contacto" data-aos="fade-up">
+    <h2>Solicita tu cotización</h2>
+
+  <form id="formulario-cotiza">
+  <div>
+    <label for="nombre">Nombre completo</label><br>
+    <input id="nombre" name="nombre" type="text" required>
+  </div>
+
+  <div>
+    <label for="correo">Correo electrónico</label><br>
+    <input id="correo" name="correo" type="email" required>
+  </div>
+
+  <div>
+    <label for="mensaje">Cuéntanos sobre tu evento</label><br>
+    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+  </div>
+
+  <button type="submit" class="btn">Enviar</button>
+</form>
+
+    <div id="form-msg" style="display:none; margin-top:16px; font-weight:600;"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="img/imagotipo.png" alt="Catering Pro" class="footer-logo">
+        <p>Creando sabores perfectos.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li>Matrimonios</li>
+          <li>Corporativos</li>
+          <li>Otras reuniones</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nosotros</h4>
+        <ul>
+          <li>Contacto</li>
+          <li>Testimonios</li>
+          <li>Galería</li>
+        </ul>
+      </div>
+      <div class="footer-col social">
+        <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="img/youtube.svg" alt="YouTube"></a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Catering Pro | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Script AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+  </script>
+
+  <!-- SCRIPT FETCH -->
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('formulario-cotiza');
+  const msgBox = document.getElementById('form-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msgBox.style.display = 'none';
+
+    const formData = new FormData(form);
+
+    try {
+      const resp = await fetch('api/post/guardarDatos.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      const json = await resp.json();
+
+      if (resp.ok && json.ok) {
+        msgBox.style.display = 'block';
+        msgBox.style.color = 'green';
+        msgBox.innerText = json.msg || 'Enviado correctamente';
+        form.reset();
+      } else {
+        msgBox.style.display = 'block';
+        msgBox.style.color = 'red';
+        if (json.errors) {
+          msgBox.innerText = json.errors.join(' - ');
+        } else {
+          msgBox.innerText = json.msg || 'Error al enviar';
+        }
+      }
+    } catch (err) {
+      msgBox.style.display = 'block';
+      msgBox.style.color = 'red';
+      msgBox.innerText = 'Error de red: ' + err.message;
+    }
+  });
+});
+</script>
+</body>
+</html> 

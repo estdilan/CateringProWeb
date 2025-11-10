@@ -1,0 +1,123 @@
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
+
+.main-header {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 15px 60px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header .nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.main-header .nav-links a:hover,
+.main-header .nav-links a.active {
+  color: #b89b5e;
+}
+
+/* HERO */
+.hero {
+  background: url('img/other/reseñas-hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 200px 20px 150px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* FORMULARIO */
+.resenas {
+  text-align: center;
+  padding: 80px 20px;
+}
+.resenas form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+.resenas input, .resenas textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.btn {
+  background: #b89b5e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #a5894d;
+}
+.msg {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* LISTA DE RESEÑAS */
+.lista-resenas {
+  background: #fafafa;
+  padding: 80px 20px;
+  text-align: center;
+}
+.resena {
+  background: white;
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: left;
+}
+.resena h3 {
+  color: #b89b5e;
+  margin-bottom: 5px;
+}
+.resena .fecha {
+  font-size: 0.9rem;
+  color: #777;
+}
+.resena .comentario {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}

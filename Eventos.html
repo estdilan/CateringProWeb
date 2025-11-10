@@ -21,10 +21,10 @@
 
       <nav class="nav-links">
         <a href="Matrimonios.html">MATRIMONIOS</a>
-        <a href="eventos.html" class="active">EVENTOS CORPORATIVOS</a>
-        <a href="fiestas.html">FIESTAS PRIVADAS</a>
-        <a href="galeria.html">GALERÍA</a>
-        <a href="reseñas.html">RESEÑAS</a>
+        <a href="Eventos.html" class="active">EVENTOS CORPORATIVOS</a>
+        <a href="Fiestas_Privadas.html">FIESTAS PRIVADAS</a>
+        <a href="Galerias.html">GALERÍA</a>
+        <a href="Reseñas.html">RESEÑAS</a>
       </nav>
     </div>
   </header>
@@ -98,23 +98,32 @@
        <strong>Experiencia:</strong> Más de 20 años de trayectoria en catering corporativo.</p>
   </section>
 
-  <!-- FORMULARIO -->
+   <!--  FORMULARIO AJAX -->
   <section id="contacto" class="contacto" data-aos="fade-up">
     <h2>Solicita tu cotización</h2>
 
-    <form id="formulario-cotiza">
-      <label for="nombre">Nombre completo</label>
-      <input id="nombre" name="nombre" type="text" required>
-      <label for="correo">Correo electrónico</label>
-      <input id="correo" name="correo" type="email" required>
-      <label for="mensaje">Cuéntanos sobre tu evento</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-      <button type="submit" class="btn">Enviar</button>
-    </form>
+  <form id="formulario-cotiza">
+  <div>
+    <label for="nombre">Nombre completo</label><br>
+    <input id="nombre" name="nombre" type="text" required>
+  </div>
+
+  <div>
+    <label for="correo">Correo electrónico</label><br>
+    <input id="correo" name="correo" type="email" required>
+  </div>
+
+  <div>
+    <label for="mensaje">Cuéntanos sobre tu evento</label><br>
+    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+  </div>
+
+  <button type="submit" class="btn">Enviar</button>
+</form>
+
     <div id="form-msg" style="display:none; margin-top:16px; font-weight:600;"></div>
   </section>
 
-  <!-- FOOTER -->
    <!-- FOOTER -->
   <footer>
     <div class="footer-container">
@@ -147,36 +156,53 @@
     <p class="footer-copy">© 2025 Catering Pro | Todos los derechos reservados</p>
   </footer>
 
-  <!-- LIBRERÍAS -->
+  <!-- Script AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
   <script>
-    AOS.init({ duration: 1000, once: true });
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      pagination: { el: ".swiper-pagination", clickable: true },
-      autoplay: { delay: 4000 },
-    });
-
-    // Enviar formulario
-    document.getElementById('formulario-cotiza').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const msg = document.getElementById('form-msg');
-      const formData = new FormData(e.target);
-      try {
-        const resp = await fetch('api/post/guardarDatos.php', { method: 'POST', body: formData });
-        const data = await resp.json();
-        msg.style.display = 'block';
-        msg.style.color = data.ok ? 'green' : 'red';
-        msg.innerText = data.msg;
-        if (data.ok) e.target.reset();
-      } catch (err) {
-        msg.style.display = 'block';
-        msg.style.color = 'red';
-        msg.innerText = 'Error de red: ' + err.message;
-      }
-    });
+    AOS.init({ duration: 1000, once: true, offset: 100 });
   </script>
+
+  <!-- SCRIPT FETCH -->
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('formulario-cotiza');
+  const msgBox = document.getElementById('form-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msgBox.style.display = 'none';
+
+    const formData = new FormData(form);
+
+    try {
+      const resp = await fetch('api/post/guardarDatos.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      const json = await resp.json();
+
+      if (resp.ok && json.ok) {
+        msgBox.style.display = 'block';
+        msgBox.style.color = 'green';
+        msgBox.innerText = json.msg || 'Enviado correctamente';
+        form.reset();
+      } else {
+        msgBox.style.display = 'block';
+        msgBox.style.color = 'red';
+        if (json.errors) {
+          msgBox.innerText = json.errors.join(' - ');
+        } else {
+          msgBox.innerText = json.msg || 'Error al enviar';
+        }
+      }
+    } catch (err) {
+      msgBox.style.display = 'block';
+      msgBox.style.color = 'red';
+      msgBox.innerText = 'Error de red: ' + err.message;
+    }
+  });
+});
+</script>
 </body>
-</html>
+</html> 

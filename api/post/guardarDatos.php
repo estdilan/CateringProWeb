@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
-// 1️⃣ Conexión a tu base de datos existente
+// Conexión a tu base de datos existente
 $conexion = new mysqli("localhost", "root", "", "formulario_db");
 
 // Verificar conexión
@@ -10,7 +10,7 @@ if ($conexion->connect_error) {
   exit;
 }
 
-// 2️⃣ Capturar los datos del formulario
+//  Capturar los datos del formulario
 $nombre = $_POST['nombre'] ?? '';
 $correo = $_POST['correo'] ?? '';
 $mensaje = $_POST['mensaje'] ?? '';
