@@ -7,7 +7,9 @@
     --font-primary: "Cormorant Garamond", serif;
     --font-secondary: "Merriweather Sans", sans-serif;
     
+    --text-large: 2rem;
     --text-medium: 1.5rem;
+    --text-bm: 1.25rem;
     --text-base: 1rem;
     --text-sm: 0.875rem; 
     --text-xs: 0.75rem;
@@ -75,7 +77,7 @@ header nav ul {
     align-items: center;
     gap: 2rem;
 }
-header nav a, #sidebar nav a {
+header nav a, #menu nav a {
     color: white;
     transition: color 0.3s ease;
     font-family: var(--font-secondary);
@@ -83,7 +85,7 @@ header nav a, #sidebar nav a {
     font-weight: var(--weight-regular);
     letter-spacing: 0.1rem;
 }
-header nav a:hover, #sidebar nav a:hover {
+header nav a:hover, #menu nav a:hover {
     color: var(--beige);
     text-decoration: underline;
     text-decoration-style: wavy;
@@ -93,13 +95,13 @@ header nav a:hover, #sidebar nav a:hover {
 #menu-toggle {
     display: none;
 }
-#sidebar {
+#menu {
     display: none;
 }
-.sidebar-open {
+.menu-open {
     display: flex !important;
 }
-#sidebar nav ul {
+#menu nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,10 +109,10 @@ header nav a:hover, #sidebar nav a:hover {
 }
 
 .hero-background{
-    height: 800px;
+    height: 900px;
     margin-top: 100px;
 }
-.hero-background, .form, #preparation-image {
+.hero-background, #form, #preparation-image {
     width: 100%;
     background-size: cover;
     background-position: center top;
@@ -136,25 +138,25 @@ header nav a:hover, #sidebar nav a:hover {
     justify-content: space-between;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    grid-row-gap: 10rem;
-    padding: 10rem 10%;
+    grid-row-gap: 15rem;
+    padding: 15rem 10% 10rem;
 }
 .highlight h2 {
     font-family: var(--font-primary);
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: var(--weight-semibold);
     font-optical-sizing: auto;
 }
 .highlight p {
     font-family: var(--font-primary);
-    font-size: var(--text-medium);
+    font-size: var(--text-large);
     font-weight: var(--weight-regular);
     font-optical-sizing: auto;
     font-style: italic;
 }
 #preparation-image {
     grid-area: 2 / 1 / 3 / 3;
-    height: 600px;
+    height: 700px;
 }
 
 .contact-bar {
@@ -171,7 +173,7 @@ header nav a:hover, #sidebar nav a:hover {
 }
 .contact-bar p {
     font-family: var(--font-primary);
-    font-size: var(--text-medium);
+    font-size: var(--text-large);
     font-weight: var(--weight-light);
     font-optical-sizing: auto;
     font-style: italic;
@@ -179,7 +181,7 @@ header nav a:hover, #sidebar nav a:hover {
 }
 .contact-btn {
     width: 100%;
-    padding: 10px 0;
+    padding: 1rem 10%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     color: var(--dark-gray);
@@ -197,9 +199,61 @@ header nav a:hover, #sidebar nav a:hover {
     color: var(--beige);
 }
 
-.form {
-    height: 700px;
+#form {
+    height: 1000px;
     margin-bottom: 10rem;
+    padding: 0 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#form-box {
+    height: 860px;
+    width: 600px;
+    background-color: white;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+}
+#form-box div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#form-box h3 {
+    font-family: var(--font-primary);
+    font-size: var(--text-medium);
+    font-weight: var(--weight-semibold);
+    font-optical-sizing: auto;
+}
+#form-box p {
+    font-family: var(--font-primary);
+    font-size: var(--text-bm);
+    font-weight: var(--weight-regular);
+}
+label {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    font-style: italic;
+    font-optical-sizing: auto;
+}
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    resize: none;
+}
+#nombre, #apellido, #email, #telefono, #message {
+    padding: 0.75rem;
+    font-family: var(--font-secondary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    border: 1px solid var(--medium-gray);
+    height: max-content;
+}
+#message {
+    height: 150px;
 }
 
 footer {
@@ -282,6 +336,29 @@ footer {
     font-weight: var(--weight-light);
 }
 
+@media (max-width: 1580px) {
+    .hero-background {
+        height: 800px;
+    }
+    #preparation-image {
+        height: 600px;
+    }
+
+    .highlight {
+        grid-row-gap: 10rem;
+        padding: 10rem 10%;
+    }
+    .highlight h2 {
+        font-size: 5rem;
+    }
+    .highlight p {
+        font-size: var(--text-medium);
+    }
+
+    .contact-bar p {
+        font-size: var(--text-medium);
+    }
+}
 @media (max-width: 1220px) {
     header {
         height: 80px;
@@ -307,8 +384,7 @@ footer {
     #menu-toggle:hover svg {
         fill: #E5E0D0;
     }
-
-    #sidebar {
+    #menu {
         background-color: rgba(10, 10, 10, 0.9);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
@@ -380,10 +456,6 @@ footer {
     .contact-bar {
         margin: 0 10% 5rem;
         padding: 2rem;
-    }
-
-    .form {
-        height: 900px;
     }
 
     footer {
