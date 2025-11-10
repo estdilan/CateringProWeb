@@ -1,18 +1,24 @@
 <?php
 header("Content-Type: application/json");
-$conexion = new mysqli("localhost", "root", "", "formulario_db");
 
-if ($conexion->connect_error) {
+// 1. Conexión
+$conn = new mysqli("localhost", "root", "", "formulario_db");
+if ($conn->connect_error) {
   echo json_encode([]);
   exit;
 }
 
-$res = $conexion->query("SELECT nombre, comentario, DATE_FORMAT(fecha, '%d/%m/%Y %H:%i') AS fecha FROM resenas ORDER BY id DESC");
-$rows = [];
-while ($r = $res->fetch_assoc()) {
-  $rows[] = $r;
+// 2. Consulta
+$sql = "SELECT id, nombre, comentario, fecha FROM resenas ORDER BY id DESC";
+$result = $conn->query($sql);
+
+$resenas = [];
+
+while ($row = $result->fetch_assoc()) {
+  $resenas[] = $row;
 }
 
-echo json_encode($rows);
-$conexion->close();
+echo json_encode($resenas);
+$conn->close();
 ?>
+

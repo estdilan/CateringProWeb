@@ -1,8 +1,8 @@
 <?php
 // --- 1. Conexión a la base de datos ---
 $servername = "localhost";
-$username = "root";  // o el usuario que uses
-$password = "";      // tu contraseña (si tienes)
+$username = "root";  //  usuario que uses
+$password = "";      // contraseña
 $database = "formulario_db";
 
 $conn = new mysqli($servername, $username, $password, $database);
