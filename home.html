@@ -12,17 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css "href="styles.css">
 
-    <title>CateringPro</title>
+    <title>Home</title>
 </head>
 <body>
     <header>
         <h1>
-            <a href="index.html"><img src="img/logo-white.png" alt="Logo"></a>
-            <a href="index.html">Catering Pro</a>
+            <a href="home.html"><img src="img/logo-white.png" alt="Logo"></a>
+            <a href="home.html">Catering Pro</a>
         </h1>    
         <nav>
             <ul>
-                <li><a href="#">MATRIMONIOS</a></li>
+                <li><a href="matrimonios.html">MATRIMONIOS</a></li>
                 <li><a href="#">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="#">FIESTAS PRIVADAS</a></li>
                 <li><a href="#">GALERIA</a></li>
@@ -35,10 +35,10 @@
             </div>
         </nav>
     </header>
-    <div id="sidebar">
+    <div id="menu">
         <nav>
             <ul>
-                <li><a href="#">MATRIMONIOS</a></li>
+                <li><a href="matrimonios.html">MATRIMONIOS</a></li>
                 <li><a href="#">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="#">FIESTAS PRIVADAS</a></li>
                 <li><a href="#">GALERIA</a></li>
@@ -63,11 +63,29 @@
     <section class="contact-bar">
         <p>Realizamos nuestras operaciones en la ciudad de Bogotá, incluyendo sus áreas circundantes.<br>
         <br>Estaremos entusiasmados de orquestar esta sinfonía culinaria para que su única tarea sea vivir y atesorar los mejores momentos.</p>
-        <a href="#contacto" class="contact-btn">PONERSE EN CONTACTO</a>
+        <a href="#form" class="contact-btn">PONERSE EN CONTACTO</a>
     </section>
-    <section class="form" style="background-image: url(img/others/amasijos.png);">
-        <div class="hero-content">
-        </div>
+    <section id="form" style="background-image: url(img/others/amasijos.png);">
+        <form id="form-box">
+            <p>¿No esta seguro de a quien contactar? Llene el formulario de abajo y nosotros nos pondremos en contacnto lo más pronto posible</p>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input required type="text" id="nombre" name="nombre" placeholder="nombre">
+
+                <label for="apellido">Apellido:</label>
+                <input required type="text" id="apellido" name="apellido" placeholder="apellido">
+
+                <label for="email">Email:</label>
+                <input required type="email" id="email" name="email" placeholder="ejemplo@dominio.com">
+
+                <label for="telefono">Teléfono:</label>
+                <input required type="tel" id="telefono" name="telefono" placeholder="3103003100">
+
+                <label for="message">Mensaje:</label>
+                <textarea required id="message" name="mensaje" placeholder="Detalles de tu interes"></textarea>
+            </div>
+            <button class="contact-btn" type="submit">Enviar</button>
+        </form>
     </section>
 
     <footer>
@@ -79,7 +97,7 @@
                 <div class="footer-col">
                     <h3>Servicios</h3> 
                     <ul>
-                        <li><a href="#">MATRIMONIOS</a></li>
+                        <li><a href="matrimonios.html">MATRIMONIOS</a></li>
                         <li><a href="#">EVENTOS CORPORATIVOS</a></li>
                         <li><a href="#">FIESTAS PRIVADAS</a></li>
                     </ul>
