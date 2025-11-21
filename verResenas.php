@@ -1,24 +1,19 @@
 <?php
 header("Content-Type: application/json");
 
-// 1. Conexión
 $conn = new mysqli("localhost", "root", "", "formulario_db");
-if ($conn->connect_error) {
-  echo json_encode([]);
-  exit;
+
+$sql = "SELECT id, nombre, comentario, fecha, estado FROM resenas ORDER BY id DESC";
+$res = $conn->query($sql);
+
+$data = [];
+
+while ($row = $res->fetch_assoc()) {
+  $data[] = $row;
 }
 
-// 2. Consulta
-$sql = "SELECT id, nombre, comentario, fecha FROM resenas ORDER BY id DESC";
-$result = $conn->query($sql);
-
-$resenas = [];
-
-while ($row = $result->fetch_assoc()) {
-  $resenas[] = $row;
-}
-
-echo json_encode($resenas);
+echo json_encode($data);
 $conn->close();
 ?>
+
 
