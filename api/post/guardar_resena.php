@@ -1,30 +1,34 @@
 <?php
 header("Content-Type: application/json");
+
 $conexion = new mysqli("localhost", "root", "", "formulario_db");
 
 if ($conexion->connect_error) {
-  echo json_encode(["ok" => false, "msg" => "Error de conexión"]);
-  exit;
+    echo json_encode(["ok" => false, "msg" => "Error de conexión"]);
+    exit;
 }
 
-$nombre = $_POST['nombre'] ?? '';
-$correo = $_POST['correo'] ?? '';
-$comentario = $_POST['comentario'] ?? '';
+$nombre = $_POST['nombre'] ?? null;
+$correo = $_POST['correo'] ?? null;
+$comentario = $_POST['comentario'] ?? null;
 
-if (empty($nombre) || empty($comentario)) {
-  echo json_encode(["ok" => false, "msg" => "Nombre y comentario son obligatorios"]);
-  exit;
+if (!$nombre || !$comentario) {
+    echo json_encode(["ok" => false, "msg" => "Datos incompletos"]);
+    exit;
 }
 
-$stmt = $conexion->prepare("INSERT INTO resenas (nombre, correo, comentario, fecha) VALUES (?, ?, ?, NOW())");
+$stmt = $conexion->prepare("
+    INSERT INTO resenas (nombre, correo, comentario, fecha, estado)
+    VALUES (?, ?, ?, NOW(), 'pendiente')
+");
+
 $stmt->bind_param("sss", $nombre, $correo, $comentario);
 
 if ($stmt->execute()) {
-  echo json_encode(["ok" => true, "msg" => "Reseña guardada con éxito"]);
+    echo json_encode(["ok" => true, "msg" => "Tu reseña fue enviada"]);
 } else {
-  echo json_encode(["ok" => false, "msg" => "Error al guardar"]);
+    echo json_encode(["ok" => false, "msg" => "Error al guardar"]);
 }
-
-$stmt->close();
-$conexion->close();
 ?>
+
+

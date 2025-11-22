@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // --- 2. Consulta para traer los datos ---
-$sql = "SELECT id, nombre, correo, mensaje, fecha FROM contacto ORDER BY id DESC";
+$sql = "SELECT id, nombre, correo, mensaje, fecha, estado FROM contacto ORDER BY id DESC";
 $result = $conn->query($sql);
 ?>
 
@@ -55,31 +55,68 @@ $result = $conn->query($sql);
 <body>
   <h1> Registros del Formulario de Cotización</h1>
 
-  <table>
+<table>
     <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Correo</th>
-      <th>Mensaje</th>
-      <th>Fecha</th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Mensaje</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Acción</th>
     </tr>
 
     <?php
     if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . htmlspecialchars($row["id"]) . "</td>";
-        echo "<td>" . htmlspecialchars($row["nombre"]) . "</td>";
-        echo "<td>" . htmlspecialchars($row["correo"]) . "</td>";
-        echo "<td>" . nl2br(htmlspecialchars($row["mensaje"])) . "</td>";
-        echo "<td>" . htmlspecialchars($row["fecha"]) . "</td>";
-        echo "</tr>";
-      }
+        while ($row = $result->fetch_assoc()) {
+
+            $color = ($row["estado"] == "pendiente") ? "style='color:red; font-weight:bold;'" : "style='color:green; font-weight:bold;'";
+
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row["id"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["nombre"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["correo"]) . "</td>";
+            echo "<td>" . nl2br(htmlspecialchars($row["mensaje"])) . "</td>";
+            echo "<td>" . htmlspecialchars($row["fecha"]) . "</td>";
+            echo "<td $color>" . htmlspecialchars($row["estado"]) . "</td>";
+
+            if ($row["estado"] == "pendiente") {
+                echo "<td>
+                        <button onclick='marcarRevisado(".$row["id"].")'>Marcar revisado</button>
+                      </td>";
+            } else {
+                echo "<td>✔</td>";
+            }
+
+            echo "</tr>";
+        }
     } else {
-      echo "<tr><td colspan='5' style='text-align:center;'>No hay registros aún.</td></tr>";
+        echo "<tr><td colspan='7' style='text-align:center;'>No hay registros aún.</td></tr>";
     }
-    $conn->close();
     ?>
-  </table>
+</table>
+<script>
+function marcarRevisado(id) {
+    const formData = new FormData();
+    formData.append("id", id);
+
+    fetch("marcar_revisado.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(r => r.text())
+    .then(t => {
+        if (t.trim() === "ok") {
+            location.reload();
+        } else {
+            alert("Error al actualizar");
+        }
+    });
+}
+</script>
+
+</body>
+</html>
+
 </body>
 </html>

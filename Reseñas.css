@@ -1,176 +1,18 @@
-body {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
+.resena-item {
   background: #fff;
-  color: #333;
-  padding-top: 110px;
-}
-
-/* HEADER */
-.main-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 15px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s ease-in-out;
-}
-
-.main-header .header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.main-header .brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.main-header .brand-logo {
-  width: 55px;
-}
-
-.main-header .brand-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.main-header .nav-links {
-  display: flex;
-  gap: 30px;
-}
-
-.main-header .nav-links a {
-  color: #fff;
-  font-size: 0.95rem;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.main-header .nav-links a:hover,
-.main-header .nav-links a.active {
-  color: #b89b5e;
-}
-
-/* HERO */
-.hero {
-  background: url('img/other/reseñas-hero.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 200px 20px 150px;
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4);
-}
-
-.hero-text {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* FORMULARIO */
-.resenas {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.resenas form {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.resenas input,
-.resenas textarea {
-  width: 100%;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-.btn {
-  background: #b89b5e;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
+.resena-item h3 {
+  margin: 0 0 5px;
 }
 
-.btn:hover {
-  background: #a5894d;
-}
-
-.msg {
-  text-align: center;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-/* LISTA DE RESEÑAS */
-.lista-resenas {
-  background: #fafafa;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.resena {
-  background: white;
-  max-width: 700px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: left;
-}
-
-.resena h3 {
-  color: #b89b5e;
-  margin-bottom: 5px;
-}
-
-.resena .fecha {
-  font-size: 0.9rem;
+.resena-item .fecha {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8em;
   color: #777;
-}
-
-.resena .comentario {
-  margin-top: 10px;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* FOOTER */
-.footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
 }
