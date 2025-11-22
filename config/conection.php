@@ -1,14 +1,13 @@
 <?php
-$host = 'localhost';
-$usuario = 'root';      // En MAMP el usuario es root
-$password = 'root';     // IMPORTANTE: En MAMP la contraseña es 'root' (en XAMPP suele estar vacía)
-$base_datos = 'nombre_de_tu_bd';
-$puerto = 8889;         // MAMP usa el puerto 8889 para MySQL por defecto
+$host = "localhost";
+$user = "root";
+$pass = "root"; // Clave por defecto de MAMP
+$db   = "maindb"; // El nombre que pusimos en el Paso 1
+$port = 8889; // Puerto por defecto de MAMP para MySQL
 
-// Ejemplo de conexión con mysqli
-$conexion = new mysqli($host, $usuario, $password, $base_datos, $puerto);
+$conexion = new mysqli($host, $user, $pass, $db, $port);
 
 if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+    die("Conexión fallida: " . $conexion->connect_error);
 }
 ?>
