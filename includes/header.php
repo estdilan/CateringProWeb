@@ -10,12 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
     
-    <!-- CSS: Ruta corregida a assets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nosotros.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/galeria.css">
-    <!-- Aquí puedes agregar más CSS si es específico de una página, o unirlos todos
-    <link rel="stylesheet" type="text/css" href="assets/css/Eventos.css"> -->
+    <!-- CSS -->
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css?v=1.5">
 
     <!-- Título Dinámico: Si no definimos $titulo, usará "Catering Pro" por defecto -->
     <title><?php echo isset($titulo) ? $titulo : 'Catering Pro'; ?></title>
@@ -23,13 +19,11 @@
 <body>
     <header>
         <h1>
-            <!-- Ruta corregida a index.php y assets/img -->
             <a href="index.php"><img src="assets/img/logo-white.png" alt="Logo"></a>
             <a href="index.php">Catering Pro</a>
         </h1>    
         <nav>
             <ul>
-                <!-- Enlaces corregidos a .php -->
                 <li><a href="matrimonios.php">MATRIMONIOS</a></li>
                 <li><a href="corporativos.php">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="fiestas_privadas.php">FIESTAS PRIVADAS</a></li>
@@ -57,6 +51,5 @@
             </ul>
         </nav>
     </div>
-    
-    <!-- Inicio del contenido principal -->
+
     <main>

@@ -1,8 +1,12 @@
+/* =========================================
+   1. RESET Y VARIABLES (Mantener igual)
+   ========================================= */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 :root {
     --font-primary: "Cormorant Garamond", serif;
     --font-secondary: "Merriweather Sans", sans-serif;
@@ -24,12 +28,16 @@
     --dark-gray: #151515;
     --beige: #e5e0d0;
 }
+
+/* CORRECCIÓN: Quitamos text-wrap: nowrap para evitar scroll horizontal en móviles */
 a, ul, h1 {
     text-decoration: none;
     list-style: none;
-    text-wrap: nowrap;
 }
 
+/* =========================================
+   2. HEADER Y NAV (Global)
+   ========================================= */
 header {
     background-color: rgba(10, 10, 10, 0.9);
     transition: background-color 0.3s ease;
@@ -43,7 +51,7 @@ header {
     left: 0;
     z-index: 999;
     width: 100%;
-    height: 100px;
+    height: 100px; /* OJO: Usaremos esta medida para empujar el contenido abajo */
     transition: height 0.3s ease;
 
     display: flex;
@@ -53,6 +61,12 @@ header {
     padding: 0 10%;
     gap: 2rem;
 }
+
+/* Clase utilitaria para que el contenido no quede tapado por el header fijo */
+body {
+    padding-top: 100px; /* Mismo alto que el header */
+}
+
 header img {
     width: 80px;
     height: auto;
@@ -68,7 +82,7 @@ header h1 a {
     font-family: var(--font-primary);
     font-size: 2rem;
     font-weight: 300;
-    font-optical-sizing: auto;
+    white-space: nowrap;
     color: white;
 }
 header nav ul {
@@ -84,6 +98,7 @@ header nav a, #menu nav a {
     font-size: var(--text-xs);
     font-weight: var(--weight-regular);
     letter-spacing: 0.1rem;
+    white-space: nowrap; /* Solo aquí permitimos nowrap */
 }
 header nav a:hover, #menu nav a:hover {
     color: var(--beige);
@@ -92,175 +107,166 @@ header nav a:hover, #menu nav a:hover {
     text-underline-offset: 0.25rem;
 }
 
-#menu-toggle {
-    display: none;
-}
-#menu {
-    display: none;
-}
-.menu-open {
-    display: flex !important;
-}
+/* MENÚ MÓVIL */
+#menu-toggle { display: none; }
+#menu { display: none; }
+.menu-open { display: flex !important; justify-content: flex-end;}
+
 #menu nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
     gap: 2rem;
 }
 
-.hero-background{
-    height: 900px;
-    margin-top: 100px;
-}
-.hero-background, #form, #preparation-image {
+/* =========================================
+   3. HERO SECTION (Reutilizable)
+   ========================================= */
+/* Cambio: height fijo a min-height para que se adapte */
+.hero {
     width: 100%;
+    height: 80vh;
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+    display: flex;         /* Agregado para centrar contenido si lo pones */
+    align-items: center;   /* Agregado */
+    justify-content: center; /* Agregado */
 }
-.hero-background::before, .form::before {
+
+/* Capa oscura encima de la foto */
+.hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(21, 21, 21, 0.5), rgba(64, 64, 64, 0));
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(21, 21, 21, 0.6), rgba(64, 64, 64, 0.2));
     z-index: 1;
 }
 
-.highlight {
+/* =========================================
+   4. COMPONENTES REUTILIZABLES (Clases, no IDs)
+   ========================================= */
+
+/* Títulos grandes (Antes .highlight h2) */
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 4rem; /* Reducido un poco para seguridad */
+    font-weight: var(--weight-semibold);
+    margin-bottom: 1rem;
+}
+
+/* Estilo de cuadrícula (Antes .highlight) */
+.grid-section {
     width: 100%;
     display: grid;
     align-items: center;
     justify-content: space-between;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-row-gap: 15rem;
-    padding: 15rem 10% 10rem;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 4rem; /* Espacio general */
+    padding: 5rem 10%; /* Padding vertical más seguro */
 }
-.highlight h2 {
-    font-family: var(--font-primary);
-    font-size: 6rem;
-    font-weight: var(--weight-semibold);
-    font-optical-sizing: auto;
-}
-.highlight p {
+
+.grid-text p {
     font-family: var(--font-primary);
     font-size: var(--text-large);
     font-weight: var(--weight-regular);
-    font-optical-sizing: auto;
     font-style: italic;
 }
-#preparation-image {
-    grid-area: 2 / 1 / 3 / 3;
-    height: 700px;
+
+/* Imágenes decorativas en secciones */
+.section-image {
+    width: 100%;
+    height: 500px; /* Altura controlada */
+    object-fit: cover; /* La imagen no se deforma */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.contact-bar {
+/* Tarjetas de Contacto / Login / Info */
+.info-card {
     background-color: var(--beige);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
-    width: 80%;
-    margin: 0 10% 10rem;
-    padding: 5rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    text-align: center;
+    margin: 2rem auto; /* Centrado automático */
+    max-width: 800px;
 }
-.contact-bar p {
-    font-family: var(--font-primary);
-    font-size: var(--text-large);
-    font-weight: var(--weight-light);
-    font-optical-sizing: auto;
-    font-style: italic;
-    letter-spacing: 0;
-}
-.contact-btn {
-    width: 100%;
-    padding: 1rem 10%;
+
+/* Botones Generales */
+.btn-primary {
+    padding: 1rem 2rem;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     color: var(--dark-gray);
     font-family: var(--font-secondary);
     font-size: var(--text-base);
-    font-weight: var(--weight-light);
     letter-spacing: 0.1rem;
     border: 1px solid var(--dark-gray);
     background-color: transparent;
-    transition: color 0.3s ease;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
-.contact-btn:hover {
+.btn-primary:hover {
     background-color: var(--dark-gray);
     color: var(--beige);
 }
 
-#form {
-    height: 1000px;
-    margin-bottom: 10rem;
-    padding: 0 10%;
+/* =========================================
+   5. FORMULARIOS (Generalizado para Login/Contacto)
+   ========================================= */
+.form-container {
+    padding: 5rem 10%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    min-height: 600px; /* Altura mínima */
+    background-color: #f9f9f9; /* Fondo suave opcional */
 }
-#form-box {
-    height: 860px;
-    width: 600px;
+
+/* CAMBIO: De ID #form-box a CLASE .form-box */
+.form-box {
     background-color: white;
-    padding: 4rem;
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para que no se vea gigante */
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    overflow: hidden;
+    gap: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
 }
-#form-box div {
+
+.form-group {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 }
-#form-box h3 {
-    font-family: var(--font-primary);
-    font-size: var(--text-medium);
-    font-weight: var(--weight-semibold);
-    font-optical-sizing: auto;
-}
-#form-box p {
-    font-family: var(--font-primary);
-    font-size: var(--text-bm);
-    font-weight: var(--weight-regular);
-}
-label {
-    font-family: var(--font-primary);
-    font-size: var(--text-base);
-    font-weight: var(--weight-medium);
-    font-style: italic;
-    font-optical-sizing: auto;
-}
-input[type="text"], input[type="email"], input[type="tel"], textarea {
-    resize: none;
-}
-#nombre, #apellido, #email, #telefono, #message {
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea {
     padding: 0.75rem;
     font-family: var(--font-secondary);
     font-size: var(--text-base);
-    font-weight: var(--weight-regular);
     border: 1px solid var(--medium-gray);
-    height: max-content;
-}
-#message {
-    height: 150px;
+    width: 100%;
 }
 
+textarea { resize: vertical; min-height: 100px; }
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
 footer {
     background-color: var(--dark-gray);
     width: 100%;
-    height: 400px;
-    padding: 0% 10%;
+    /* Cambio: height fijo removido, usamos padding */
+    padding: 4rem 10% 1rem 10%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -271,240 +277,84 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6rem;
-    gap: 6rem;
+    flex-wrap: wrap; /* Permite que caigan si no caben */
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
-.footer-content nav {
-    display: flex;
-    flex-direction: row;
-    gap: 6rem;
-}
-.footer-content h3 {
+.footer-col h3 {
     color: white;
     font-family: var(--font-primary);
-    font-size: var(--text-base);
-    font-weight: var(--weight-light);
-    font-optical-sizing: auto;
-    font-style: normal;
-    letter-spacing: 0rem;
+    margin-bottom: 1rem;
 }
-.footer-content nav div, .footer-content ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+.footer-col ul { display: flex; flex-direction: column; gap: 0.5rem; }
 .footer-content a {
     color: var(--light-gray);
-    transition: color 0.3s ease;
     font-family: "Merriweather Sans", sans-serif;
     font-size: var(--text-xs);
-    font-weight: var(--weight-regular);
-    letter-spacing: 0.1rem;
+    transition: color 0.3s ease;
 }
-.footer-content a:hover {
-    color: var(--beige);
-}
+.footer-content a:hover { color: var(--beige); }
+
 .slogan {
     padding: 0.75rem 2rem;
-    background-color: black;
     border: 1px solid var(--beige);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.slogan p {
     color: var(--beige);
-    text-align: center;
     font-family: var(--font-primary);
-    font-size: var(--text-base);
-    font-weight: var(--weight-semibold);
-    font-optical-sizing: auto;
-    font-style: normal;
-    text-wrap: nowrap;
-    letter-spacing: 0.1rem;
+    font-weight: 600;
 }
+
 .footer-bottom {
     border-top: 1px solid var(--medium-gray);
-    padding: 0.8rem 0;
+    padding-top: 1rem;
     width: 100%;
+    text-align: center;
 }
 .footer-bottom p {
     color: var(--medium-gray);
-    font-family: var(--font-secondary);
     font-size: var(--text-xs);
-    font-weight: var(--weight-light);
 }
 
-@media (max-width: 1580px) {
-    .hero-background {
-        height: 800px;
-    }
-    #preparation-image {
-        height: 600px;
-    }
-
-    .highlight {
-        grid-row-gap: 10rem;
-        padding: 10rem 10%;
-    }
-    .highlight h2 {
-        font-size: 5rem;
-    }
-    .highlight p {
-        font-size: var(--text-medium);
-    }
-
-    .contact-bar p {
-        font-size: var(--text-medium);
-    }
-}
+/* =========================================
+   7. MEDIA QUERIES (Simplificadas)
+   ========================================= */
 @media (max-width: 1220px) {
-    header {
-        height: 80px;
+    header { height: 80px; }
+    body { padding-top: 80px; }
+    header nav ul { display: none; }
+    
+    #menu-toggle { 
+        display: flex !important; 
+        cursor: pointer; 
+        fill: white; 
     }
-    header img {
-        width: 60px;
-    }
-    header nav ul {
-        display: none;
-    }
-
-    #menu-toggle {
-        display: block !important;
-        justify-content: center; 
-        align-items: center; 
-        cursor: pointer;
-    }
-    #menu-toggle svg {
-        inset: auto;
-        fill: white;
-        transition: fill 0.3s;
-    }
-    #menu-toggle:hover svg {
-        fill: #E5E0D0;
-    }
+    
     #menu {
-        background-color: rgba(10, 10, 10, 0.9);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border-bottom: 1.5px solid white;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-
+        background-color: rgba(10, 10, 10, 0.95);
         position: fixed;
-        min-width: fit-content;
-        height: auto;
-
-        padding: 2rem;
-        margin-top: 78.5px;
         z-index: 1000;
-        right: 5%;
-        top: 0;
+        top: 78.5px; right: 0;
+        width: 100%;
+        padding: 2rem 10%;
+        border-bottom: 1px solid white;
     }
 
-    .hero-background {
-        height: 700px;
-        margin-top: 80px;
+    .grid-section {
+        grid-template-columns: 1fr; /* Una columna en tablet */
+        gap: 2rem;
     }
+}
 
-    .highlight h2 {
-        font-size: 4rem;
-    }
-    #preparation-image {
-        height: 500px;
-    }
-
-    footer {
-        height: 500px;
-    }
+@media (max-width: 768px) {
+    .hero { min-height: 40vh; }
+    .section-title { font-size: 2.5rem; }
+    
     .footer-content {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-}
-@media (max-width: 940px) {
-    .hero-background {
-        height: 500px;
+    
+    .info-card, .form-container {
+        padding: 2rem 5%;
     }
-
-    .highlight {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-row-gap: 2rem;
-    }
-    #preparation-image {
-        grid-area: 3 / 1 / 4 / 2;
-        margin-top: 8rem;
-        height: 360px;
-    }
-}
-@media (max-width: 540px) {
-    .hero-background {
-        height: 300px;
-    }
-
-    .highlight {
-        padding: 5rem 10%;
-    }
-    .highlight h2 {
-        font-size: 3rem;
-    }
-    #preparation-image {
-        height: 200px;
-        margin-top: 3rem;
-    }
-
-    .contact-bar {
-        margin: 0 10% 5rem;
-        padding: 2rem;
-    }
-
-    footer {
-        height: 800px;
-    }
-    .footer-content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-    }
-    .footer-content nav {
-        flex-direction: column;
-        gap: 4rem;
-    }
-}
-
-/* PÁGINAS DE SERVICIOS  */
-.service-detail {
-    text-align: center;
-    padding: 80px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.service-detail h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 2.5em;
-    color: #8c5b3f;
-    margin-bottom: 20px;
-}
-
-.service-detail p {
-    font-size: 1.1em;
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 40px;
-}
-
-.service-gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.service-gallery img {
-    width: 280px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
