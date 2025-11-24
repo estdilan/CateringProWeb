@@ -25,6 +25,7 @@
         </h1>    
         <nav>
             <ul>
+                <li><a href="index.php">INICIO</a></li>
                 <li><a href="matrimonios.php">MATRIMONIOS</a></li>
                 <li><a href="corporativos.php">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="fiestas_privadas.php">FIESTAS PRIVADAS</a></li>
@@ -43,6 +44,7 @@
     <div id="menu">
         <nav>
             <ul>
+                <li><a href="index.php">INICIO</a></li>
                 <li><a href="matrimonios.php">MATRIMONIOS</a></li>
                 <li><a href="corporativos.php">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="fiestas_privadas.php">FIESTAS PRIVADAS</a></li>

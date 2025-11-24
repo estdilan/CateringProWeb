@@ -396,7 +396,7 @@ footer {
 /* --- RESPONSIVE PARA GALERÍA --- */
 /* Añade esto dentro o cerca de tus media queries existentes */
 
-@media (max-width: 1000px) {
+@media (max-width: 1080px) {
     header { height: 80px; }
     .container { height: 80px; }
     header nav ul { display: none; }
@@ -417,7 +417,7 @@ footer {
         z-index: 1000;
         top: 78.5px; right: 0;
         width: 100%;
-        padding: 2rem 10%;
+        padding: 2rem;
         border-bottom: 1px solid white;
     }
 
@@ -437,7 +437,7 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
     .section-title { font-size: 2.5rem; }
 
     .footer-nav {
@@ -459,3 +459,8 @@ footer {
     }
 }
 
+@media (max-width: 620px) {
+    .grid-section {
+        padding: 5vw 5%; 
+    }
+}

@@ -2,6 +2,7 @@
     <footer>
         <nav class="footer-nav" aria-label="Enlaces de navegación del pie de página">
             <ul>
+                <li><a href="index.php">INICIO</a></li>
                 <li><a href="matrimonios.php">MATRIMONIOS</a></li>
                 <li><a href="corporativos.php">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="fiestas_privadas.php">FIESTAS PRIVADAS</a></li>
