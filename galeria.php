@@ -16,25 +16,13 @@
   <div class="swiper galleryCarousel">
     <div class="swiper-wrapper">
       <!-- Slide 1 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide1.jpg" alt="Foto Carrusel 1"></div>
+      <div class="swiper-slide"><img src="assets/img/others/breakfast.jpg" alt="Foto Carrusel 1"></div>
       <!-- Slide 2 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide2.jpg" alt="Foto Carrusel 2"></div>
+      <div class="swiper-slide"><img src="assets/img/others/bruce-cake.jpg" alt="Foto Carrusel 2"></div>
       <!-- Slide 3 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide3.jpg" alt="Foto Carrusel 3"></div>
+      <div class="swiper-slide"><img src="assets/img/others/cafe.jpg" alt="Foto Carrusel 3"></div>
       <!-- Slide 4 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide4.jpg" alt="Foto Carrusel 4"></div>
-      <!-- Slide 5 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide5.jpg" alt="Foto Carrusel 5"></div>
-      <!-- Slide 6 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide6.jpg" alt="Foto Carrusel 6"></div>
-      <!-- Slide 7 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide7.jpg" alt="Foto Carrusel 7"></div>
-      <!-- Slide 8 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide8.jpg" alt="Foto Carrusel 8"></div>
-      <!-- Slide 9 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide9.jpg" alt="Foto Carrusel 9"></div>
-      <!-- Slide 10 -->
-      <div class="swiper-slide"><img src="assets/img/galeria/slide10.jpg" alt="Foto Carrusel 10"></div>
+      <div class="swiper-slide"><img src="assets/img/others/desayunosem.jpg" alt="Foto Carrusel 4"></div>
     </div>
     <!-- Flechas de navegación (opcional) -->
     <div class="swiper-button-next"></div>

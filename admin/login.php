@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         // Verificamos si la contraseña coincide con la encriptada
         if (password_verify($password, $row['password'])) {
-            // ¡Login correcto!
+
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_user'] = $row['username'];
             header("Location: panel.php");
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Iniciar Sesión - Admin</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* Ajuste específico para centrar el login en pantalla completa */
+
         body { background-color: var(--dark-gray); height: 100vh; display: flex; align-items: center; justify-content: center; }
         .login-wrapper { width: 100%; max-width: 500px; padding: 1rem; }
         .error-msg { color: red; margin-bottom: 1rem; font-family: var(--font-secondary); }

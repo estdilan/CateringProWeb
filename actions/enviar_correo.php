@@ -17,17 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$nombre_completo', '$email', '$telefono', '$mensaje')";
 
     if ($conn->query($sql) === TRUE) {
-        // ÉXITO: Redirigimos con variable status=success
+        
         header("Location: " . $redirect_url . "?status=success#form");
         exit();
     } else {
-        // ERROR DE BD: Redirigimos con variable status=error
+        
         header("Location: " . $redirect_url . "?status=error#form");
         exit();
     }
 
 } else {
-    // ACCESO DIRECTO NO PERMITIDO
+    
     header("Location: " . $redirect_url);
     exit();
 }
