@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="assets/css/styles.css?v=1.5">
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css?v=1.0">
 
     <!-- Título Dinámico: Si no definimos $titulo, usará "Catering Pro" por defecto -->
     <title><?php echo isset($titulo) ? $titulo : 'Catering Pro'; ?></title>
@@ -28,7 +29,6 @@
                 <li><a href="corporativos.php">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="fiestas_privadas.php">FIESTAS PRIVADAS</a></li>
                 <li><a href="galeria.php">GALERIA</a></li> 
-                <li><a href="nosotros.php">NOSOTROS</a></li>
             </ul>
             
             <div id="menu-toggle" aria-expanded="false" aria-controls="sidebar">
@@ -47,9 +47,10 @@
                 <li><a href="corporativos.php">EVENTOS CORPORATIVOS</a></li>
                 <li><a href="fiestas_privadas.php">FIESTAS PRIVADAS</a></li>
                 <li><a href="galeria.php">GALERIA</a></li> 
-                <li><a href="nosotros.php">NOSOTROS</a></li>
             </ul>
         </nav>
     </div>
 
+    <div class="container">
+    </div>
     <main>

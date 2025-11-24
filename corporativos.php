@@ -1,75 +1,57 @@
 <?php 
-    // 1. Definimos el título de esta página específica
-    $titulo = "Eventos corporativos - Catering Pro"; 
-    
-    // 2. Incluimos el Header
-    include 'includes/header.php'; 
+  $titulo = "Eventos corporativos - Catering Pro"; 
+  include 'includes/header.php'; 
 ?>
 
-<!-- AQUI EMPIEZA TU CONTENIDO ÚNICO DE LA HOME -->
-<!-- HERO -->
-  <section class="hero" data-aos="fade-up">
-    <h1>Eventos Corporativos</h1>
-    <p>Servicios de catering y organización diseñados para empresas que buscan excelencia, puntualidad y sabor en cada evento.</p>
-    <a href="#contacto" class="btn">Cotiza en línea</a>
-  </section>
+<section class="hero" style="background-image: url('assets/img/others/corporate-event.png');">
+  <h1>EVENTOS CORPORATIVOS</h1>
+  <p>Servicios de catering y organización diseñados para empresas que buscan excelencia, puntualidad y sabor en cada evento.</p>
+  <a href="#contacto" class="hero-btn">Cotiza en línea</a>
+</section>
 
-  <!-- CARRUSEL -->
-  <div class="swiper mySwiper" data-aos="fade-up">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="img/others/estacióndecafé.jpg" alt="Estaciones de café"></div>
-      <div class="swiper-slide"><img src="img/others/refrigerios.jpg" alt="Refrigerios empresariales"></div>
-      <div class="swiper-slide"><img src="img/others/desayunos.jpg" alt="Desayunos de trabajo"></div>
-      <div class="swiper-slide"><img src="img/others/postres.jpg" alt="Postres gourmet"></div>
-      <div class="swiper-slide"><img src="img/others/fiesta.jpg" alt="Fiestas de empresa"></div>
-    </div>
-    <div class="swiper-pagination"></div>
+
+<section class="info-card" id="contacto">
+  <p>Catering empresarial especializado para todo tipo de eventos corporativos. Cubrimos Bogotá y Cundinamarca, asegurando que cada pausa o evento sea un éxito.</p>
+</section>
+
+<section class="grid-section">
+  <div class="grid-text">
+    <h2>ESTACIONES DE CAFÉ</h2>
+    <p>Estaciones personalizadas, refrigerios saludables y comida para eventos masivos o pasabocas gourmet.</p>
   </div>
+  <img src="assets/img/others/cafe.jpg" alt="Estación de café" class="section-image">
 
-  <!-- SECCIONES -->
-  <section class="banner" data-aos="fade-right">
-    <div class="banner-img" style="background-image: url('img/others/cafe.jpg');"></div>
-    <div class="banner-text">
-      <h2>Estaciones de Café</h2>
-      <p>Catering empresarial especializado para todo tipo de eventos corporativos. Estaciones de café personalizadas, refrigerios saludables y comida para eventos masivos o pasabocas gourmet. Cubrimos Bogotá y Cundinamarca, asegurando que cada pausa o evento sea un éxito.</p>
-    </div>
-  </section>
+  <div class="grid-text">
+    <h2>REFRIGERIOS Y ALMUERZOS</h2>
+    <p>La opción práctica y deliciosa. Almuerzos y refrigerios empacados, frescos y balanceados, perfectos para consentir a tu equipo.</p>
+  </div>
+  <img src="assets/img/others/refri.jpg" alt="Refrigerios empacados" class="section-image">
 
-  <section class="banner" data-aos="fade-left">
-    <div class="banner-text">
-      <h2>Refrigerios y Almuerzos Empacados</h2>
-      <p>La opción práctica y deliciosa para tus reuniones o días de oficina. Almuerzos y refrigerios empacados, frescos y balanceados, perfectos para consentir a tus clientes o equipo de trabajo.</p>
-    </div>
-    <div class="banner-img" style="background-image: url('img/others/refri.jpg');"></div>
-  </section>
+  <div class="grid-text">
+    <h2>DESAYUNOS DE TRABAJO</h2>
+    <p>Opciones saludables y gourmet diseñadas para destacar en cualquier reunión, garantizando experiencias revitalizantes.</p>
+  </div>
+  <img src="assets/img/others/desayunosem.jpg" alt="Desayuno de trabajo" class="section-image">
 
-  <section class="banner" data-aos="fade-right">
-    <div class="banner-img" style="background-image: url('img/others/desayunosem.jpg');"></div>
-    <div class="banner-text">
-      <h2>Desayunos y Almuerzos de Trabajo</h2>
-      <p>Opciones saludables y gourmet diseñadas para destacar en cualquier evento, garantizando experiencias revitalizantes y deliciosas.</p>
-    </div>
-  </section>
+  <div class="grid-text">
+    <h2>POSTRES GOURMET</h2>
+    <p>Mini pasteles, galletas artesanales y postres individuales ideales para reuniones o celebraciones empresariales.</p>
+  </div>
+  <img src="assets/img/others/postrescatering.jpg" alt="Postres para eventos" class="section-image">
 
-  <section class="banner" data-aos="fade-left">
-    <div class="banner-text">
-      <h2>Postres para Eventos</h2>
-      <p>Mini pasteles, galletas artesanales y postres individuales ideales para reuniones o celebraciones empresariales. Cada detalle cuenta.</p>
-    </div>
-    <div class="banner-img" style="background-image: url('img/others/postrescatering.jpg');"></div>
-  </section>
+  <div class="grid-text">
+    <h2>FIESTAS EMPRESARIALES</h2>
+    <p>Desde la elección del lugar hasta el entretenimiento. Nos encargamos de la logística completa para tu celebración.</p>
+  </div>
+  <img src="assets/img/others/martinis.jpg" alt="Fiesta empresarial" class="section-image">
 
-  <section class="banner" data-aos="fade-right">
-    <div class="banner-img" style="background-image: url('img/others/martinis.jpg');"></div>
-    <div class="banner-text">
-      <h2>Organización de Fiestas Empresariales</h2>
-      <p>Desde la elección del lugar, decoración y menú gourmet, hasta entretenimiento y logística. Más de 20 años creando experiencias inolvidables en Bogotá y Cundinamarca.</p>
-    </div>
-  </section>
-<!-- AQUI TERMINA TU CONTENIDO ÚNICO -->
+</section>
+
+<section class="info-card">
+  <p>Más de 20 años creando experiencias inolvidables. Nos encargamos de la logística y el servicio para que disfrutes de un evento corporativo perfecto.</p>
+</section>
 
 <?php 
-    include 'includes/form.php'; 
-    // 3. Incluimos el Footer
-    include 'includes/footer.php'; 
+  include 'includes/form.php'; 
+  include 'includes/footer.php'; 
 ?>

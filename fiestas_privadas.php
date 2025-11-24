@@ -1,83 +1,52 @@
 <?php 
-    // 1. Definimos el título de esta página específica
-    $titulo = "Fiestas Privada - Catering Pro"; 
-    
-    // 2. Incluimos el Header
-    include 'includes/header.php'; 
+  $titulo = "Fiestas Privada - Catering Pro"; 
+  include 'includes/header.php'; 
 ?>
 
-<!-- AQUI EMPIEZA TU CONTENIDO ÚNICO DE LA HOME -->
-<section class="hero">
-    <h1>Fiestas Privadas</h1>
-    <p>Hacemos realidad tus celebraciones con estilo, elegancia y el mejor servicio gastronómico en Bogotá y Cundinamarca.</p>
-    <a href="#contacto" class="btn">Cotiza en línea</a>
-  </section>
+<!-- SECCIÓN HERO -->
+<!-- Usamos 'img/quince.jpg' como fondo principal por ser impactante -->
+<section class="hero" style="background-image: url('assets/img/others/corporate-event-2.jpg');">
+  <h1>FIESTAS PRIVADAS</h1>
+  <p>Hacemos realidad tus celebraciones con estilo, elegancia y el mejor servicio gastronómico en Bogotá y Cundinamarca.</p>
+  <a href="#contacto" class="hero-btn">Cotiza en línea</a>
+</section>
 
-  <!-- QUINCE AÑOS -->
-  <section class="banner banner-light">
-    <div class="banner-img" style="background-image: url('img/quince.jpg');"></div>
-    <div class="banner-text">
-      <h2>Fiestas de Quince Años</h2>
-      <p>Creamos celebraciones únicas con catering a la medida, decoración soñada, ponqué temático y atención impecable. Menús diseñados para jóvenes y adultos con estaciones interactivas, postres creativos y cenas temáticas.</p>
-      <p><strong>¡Llama ya y separa tu fecha!</strong> Ofrecemos opciones vegetarianas, sin gluten y sin azúcar.</p>
-      <a href="#contacto" class="btn">Cotiza tu Fiesta</a>
-    </div>
-  </section>
+<section class="info-card" id="contacto">
+  <p>Ofrecemos una experiencia completa que incluye catering, decoración temática, música y logística. Ya sea una fiesta de quince años o una celebración infantil, cuidamos cada detalle.</p>
+</section>
 
-  <!-- DECORACIONES TEMÁTICAS -->
-  <section class="banner banner-dark">
-    <div class="banner-text">
-      <h2>Decoraciones Temáticas</h2>
-      <p>Diseñamos decoraciones personalizadas con elegancia y estilo, cuidando cada detalle: flores, iluminación, mobiliario y colores en perfecta armonía. Contamos con salones y haciendas ideales para tus celebraciones.</p>
-      <ul>
-        <li>Estaciones interactivas (hamburguesas, crepes, sushi, tacos, etc.)</li>
-        <li>Buffets, cenas servidas y snacks divertidos</li>
-        <li>Postres y ponqués temáticos</li>
-      </ul>
-      <a href="#contacto" class="btn">Cotiza tu Fiesta de Quince</a>
-    </div>
-    <div class="banner-img" style="background-image: url('img/decoracionquince.jpg');"></div>
-  </section>
+<!-- GRID SECTION (Contenido Principal) -->
+<section class="grid-section">
 
-  <!-- DJ -->
-  <section class="banner banner-light">
-    <div class="banner-img" style="background-image: url('img/djquince.jpg');"></div>
-    <div class="banner-text">
-      <h2>DJ para Fiestas de Quince</h2>
-      <p>Nuestros DJ profesionales y sistemas de sonido premium crearán el ambiente soñado para tu fiesta. Iluminación tipo show, efectos especiales y música personalizada para que cada instante sea inolvidable.</p>
-      <a href="#contacto" class="btn">Agenda tu Fiesta Aquí</a>
-    </div>
-  </section>
+  <!-- Ítem 1: Quince Años -->
+  <div class="grid-text">
+    <h2>FAMILIA Y AMIGOS</h2>
+    <p>Creamos celebraciones únicas con catering a la medida, decoración soñada y atención impecable. Ofrecemos menús para jóvenes y adultos, incluyendo opciones vegetarianas, sin gluten y sin azúcar.</p>
+  </div>
+  <!-- Usamos una imagen representativa aquí -->
+  <img src="assets/img/others/cenacorporativa.jpg" alt="Celebración de amigos" class="section-image">
 
-  <!-- INFANTILES -->
-  <section class="banner banner-dark">
-    <div class="banner-text">
-      <h2>Fiestas Infantiles</h2>
-      <p>Celebramos los cumpleaños de tus hijos con un catering único, pensado especialmente para los más pequeños. Menús divertidos, servicio impecable y decoración temática para una fiesta sin preocupaciones.</p>
-      <ul>
-        <li>Mini sándwiches divertidos</li>
-        <li>Bandejas de frutas y verduras coloridas</li>
-        <li>Opciones sin gluten o veganas</li>
-        <li>Cupcakes temáticos con y sin azúcar</li>
-      </ul>
-      <a href="#contacto" class="btn">Conoce Nuestros Paquetes</a>
-    </div>
-    <div class="banner-img" style="background-image: url('img/fiestainfantil.jpg');"></div>
-  </section>
+  <!-- Ítem 2: Decoraciones Temáticas -->
+  <div class="grid-text">
+    <h2>DECORACIÓN Y CATERING</h2>
+    <p>Diseñamos espacios con flores, iluminación y mobiliario en perfecta armonía. Incluimos estaciones interactivas (hamburguesas, crepes, sushi), buffets y postres temáticos.</p>
+  </div>
+  <img src="assets/img/others/finger-foods.jpg" alt="Postres" class="section-image">
 
-  <!-- DECORACIONES Y ALQUILERES -->
-  <section class="banner banner-light">
-    <div class="banner-img" style="background-image: url('img/decoracioninfantil.jpg');"></div>
-    <div class="banner-text">
-      <h2>Decoraciones y Alquileres</h2>
-      <p>Ofrecemos alquiler de mesas, sillas, mantelería y decoración temática. Diseñamos y montamos cada espacio para crear ambientes únicos que reflejan la temática y estilo de tu celebración.</p>
-      <a href="#contacto" class="btn">Click aquí para Conocer los Paquetes</a>
-    </div>
-  </section>
-<!-- AQUI TERMINA TU CONTENIDO ÚNICO -->
+  <div class="grid-text">
+    <h2>FIESTAS INFANTILES</h2>
+    <p>Un catering único pensado para los más pequeños: mini sándwiches, brochetas de frutas, opciones veganas y cupcakes temáticos con o sin azúcar.</p>
+  </div>
+  <img src="assets/img/others/glass-view.jpg" alt="Copas con vino" class="section-image">
+
+</section>
+
+<!-- INFO CARD 2 (Cierre) -->
+<section class="info-card">
+  <p>Diseñamos paquetes a la medida para que disfrutes de tu fiesta sin preocupaciones. ¡Separa tu fecha y déjanos sorprenderte!</p>
+</section>
 
 <?php 
-    include 'includes/form.php'; 
-    // 3. Incluimos el Footer
-    include 'includes/footer.php'; 
+  include 'includes/form.php'; 
+  include 'includes/footer.php'; 
 ?>
