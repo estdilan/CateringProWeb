@@ -350,11 +350,10 @@ footer {
 .galleryCarousel .swiper-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la foto cubra todo sin deformarse */
+    object-fit: cover;
     display: block;
 }
 
-/* Personalización de flechas y puntos de Swiper para que coincidan con tu tema */
 .swiper-button-next, .swiper-button-prev {
     color: white !important;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -363,20 +362,18 @@ footer {
     background-color: var(--beige) !important;
 }
 
-/* 2. Grilla de Galería 3x5 */
 .gallery-grid {
     display: grid;
-    /* Crea 3 columnas de igual tamaño */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 1rem; /* Espacio entre fotos */
-    padding: 5rem 10%; /* Márgenes laterales para elegancia */
+    gap: 1rem;
+    padding: 5rem 10%; 
     background-color: white;
 }
 
 .gallery-item {
     width: 100%;
-    height: 400px; /* Altura fija para que todas se vean uniformes */
-    overflow: hidden; /* Para el efecto zoom */
+    height: 400px;
+    overflow: hidden; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -465,7 +462,6 @@ footer {
     }
 }
 
-/* Personalización de SweetAlert para que coincida con el sitio */
 div:where(.swal2-container) h2:where(.swal2-title) {
     font-family: "Cormorant Garamond", serif !important;
     font-size: 2rem !important;
