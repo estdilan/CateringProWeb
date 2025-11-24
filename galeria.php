@@ -49,26 +49,20 @@
 
   <!-- GRILLA DE FOTOS 3x5 (15 FOTOS) -->
   <section class="gallery-grid">
-    <!-- Fila 1 -->
-    <div class="gallery-item"><img src="assets/img/galeria/foto1.jpg" alt="Galería 1"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto2.jpg" alt="Galería 2"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto3.jpg" alt="Galería 3"></div>
-    <!-- Fila 2 -->
-    <div class="gallery-item"><img src="assets/img/galeria/foto4.jpg" alt="Galería 4"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto5.jpg" alt="Galería 5"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto6.jpg" alt="Galería 6"></div>
-    <!-- Fila 3 -->
-    <div class="gallery-item"><img src="assets/img/galeria/foto7.jpg" alt="Galería 7"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto8.jpg" alt="Galería 8"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto9.jpg" alt="Galería 9"></div>
-    <!-- Fila 4 -->
-    <div class="gallery-item"><img src="assets/img/galeria/foto10.jpg" alt="Galería 10"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto11.jpg" alt="Galería 11"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto12.jpg" alt="Galería 12"></div>
-    <!-- Fila 5 -->
-    <div class="gallery-item"><img src="assets/img/galeria/foto13.jpg" alt="Galería 13"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto14.jpg" alt="Galería 14"></div>
-    <div class="gallery-item"><img src="assets/img/galeria/foto15.jpg" alt="Galería 15"></div>
+    <?php
+      include 'admin/conection.php'; // Conectamos a la BD
+      $sql = "SELECT * FROM galeria ORDER BY id DESC"; 
+      $result = $conn->query($sql);
+
+      if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+              // Generamos el HTML dinámicamente
+              echo '<div class="gallery-item">
+                      <img src="assets/img/galeria/' . $row["nombre_archivo"] . '" alt="Foto Galería">
+                    </div>';
+          }
+      }
+    ?>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

@@ -6,7 +6,7 @@
 <section class="hero" style="background-image: url('assets/img/others/corporate-event.png');">
   <h1>EVENTOS CORPORATIVOS</h1>
   <p>Servicios de catering y organización diseñados para empresas que buscan excelencia, puntualidad y sabor en cada evento.</p>
-  <a href="#contacto" class="hero-btn">Cotiza en línea</a>
+  <a href="#form" class="hero-btn">Cotiza en línea</a>
 </section>
 
 

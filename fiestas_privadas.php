@@ -8,7 +8,7 @@
 <section class="hero" style="background-image: url('assets/img/others/corporate-event-2.jpg');">
   <h1>FIESTAS PRIVADAS</h1>
   <p>Hacemos realidad tus celebraciones con estilo, elegancia y el mejor servicio gastronómico en Bogotá y Cundinamarca.</p>
-  <a href="#contacto" class="hero-btn">Cotiza en línea</a>
+  <a href="#form" class="hero-btn">Cotiza en línea</a>
 </section>
 
 <section class="info-card" id="contacto">

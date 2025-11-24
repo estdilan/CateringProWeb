@@ -38,29 +38,3 @@ form.addEventListener('submit', function(event) {
     console.log("Objeto de Datos del Formulario:");
     console.log(formDataObject); 
 });
-
-function sendFormWithXHR(formElement, url) {
-    const formDataObject = formToObject(formElement);
-    const jsonString = JSON.stringify(formDataObject);
-    
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                try {
-                    const responseData = JSON.parse(xhr.responseText);
-                    console.log('Éxito. Respuesta del servidor:', responseData);
-                    alert('Formulario enviado con AJAX tradicional!');
-                } catch (e) {
-                    console.error('Error al parsear JSON:', e);
-                }
-            } else {
-                console.error('Error en la petición AJAX:', xhr.status, xhr.statusText);
-            }
-        }
-    };
-    xhr.send(jsonString);
-}

@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="assets/css/styles.css?v=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css?v=1.0">
 
     <!-- Título Dinámico: Si no definimos $titulo, usará "Catering Pro" por defecto -->
     <title><?php echo isset($titulo) ? $titulo : 'Catering Pro'; ?></title>

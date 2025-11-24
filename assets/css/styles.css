@@ -464,3 +464,15 @@ footer {
         padding: 5vw 5%; 
     }
 }
+
+/* Personalización de SweetAlert para que coincida con el sitio */
+div:where(.swal2-container) h2:where(.swal2-title) {
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 2rem !important;
+    color: var(--dark-gray) !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-html-container) {
+    font-family: "Merriweather Sans", sans-serif !important;
+    font-size: 1rem !important;
+}

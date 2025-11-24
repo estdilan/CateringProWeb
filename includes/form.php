@@ -2,7 +2,7 @@
 <!-- Corregí 'clase' por 'class' -->
 <!-- Actualicé la ruta de la imagen a assets/img/... -->
 <!-- Agregué background-size y blend-mode para que el texto se lea bien sobre la foto -->
-<form class="form-box" action="actions/enviar_correo.php" method="POST">
+<form id="form" class="form-box" action="actions/enviar_correo.php" method="POST">
         
     <!-- Usé la clase .section-title pero en pequeño (h3) para mantener la fuente -->
     <h3 class="section-title-2">CONTÁCTENOS</h3>
